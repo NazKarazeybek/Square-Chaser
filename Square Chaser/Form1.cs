@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace Square_Chaser
 {
@@ -42,6 +43,11 @@ namespace Square_Chaser
         SolidBrush blueBrush = new SolidBrush(Color.DodgerBlue);
         SolidBrush whiteBrush = new SolidBrush(Color.White);
         SolidBrush yellowBrush = new SolidBrush(Color.Yellow);
+
+        SoundPlayer pointSound = new SoundPlayer(Properties.Resources.boostSound);
+        SoundPlayer boostSound = new SoundPlayer(Properties.Resources.pointSound);
+
+
 
         public Form1()
         {
@@ -167,25 +173,30 @@ namespace Square_Chaser
             {
                 player1Score++; // Increment player 1 score
                 player1WinLabel.Text = $"{player1Score}"; // Update player 1 win label
+                pointSound.Play(); //added sound
                 ResetWhiteSquare();
+                
             }
 
             if (player2.IntersectsWith(whiteSquare))
             {
                 player2Score++; // Increment player 2 score
                 player2WinLabel.Text = $"{player2Score}"; // Update player 2 win label
+                pointSound.Play(); //added sound
                 ResetWhiteSquare();
             }
 
             if (player1.IntersectsWith(yellowBoost))
             {
                 player1Speed += boostAmount; // Increase player1 speed
+                boostSound.Play(); //added sound
                 ResetYellowBoost();
             }
 
             if (player2.IntersectsWith(yellowBoost))
             {
                 player2Speed += boostAmount; // Increase player2 speed
+                boostSound.Play(); //added sound
                 ResetYellowBoost();
             }
         }
