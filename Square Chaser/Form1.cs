@@ -115,28 +115,50 @@ namespace Square_Chaser
         private void MovePlayers()
         {
             if (wPressed && player1.Y > 0)
+            {
                 player1.Y -= player1Speed;
+            }
 
             if (sPressed && player1.Y < ClientSize.Height - player1.Height)
+            {
                 player1.Y += player1Speed;
+            }
+                
 
             if (aPressed && player1.X > 0)
+            {
                 player1.X -= player1Speed;
+            }
+                
 
             if (dPressed && player1.X < ClientSize.Width - player1.Width)
+            {
                 player1.X += player1Speed;
+            }
+                
 
             if (upPressed && player2.Y > 0)
+            {
                 player2.Y -= player2Speed;
+            }
+                
 
             if (downPressed && player2.Y < ClientSize.Height - player2.Height)
+            {
                 player2.Y += player2Speed;
+            }
+                
 
             if (leftPressed && player2.X > 0)
+            {
                 player2.X -= player2Speed;
+            }
+                
 
             if (rightPressed && player2.X < ClientSize.Width - player2.Width)
+            {
                 player2.X += player2Speed;
+            }
         }
 
         private void CheckCollisions()

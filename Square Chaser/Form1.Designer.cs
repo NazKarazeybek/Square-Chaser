@@ -75,6 +75,7 @@
             this.Controls.Add(this.player2WinLabel);
             this.Controls.Add(this.player1WinLabel);
             this.Controls.Add(this.winLabel);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Square Chaser";
